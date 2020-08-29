@@ -1,60 +1,76 @@
-import React from 'react'
+import React from "react";
 
-import TodoItem from "./TodoItem"
-import todoData from "./todoData"
+import TodoItem from "./TodoItem";
+import todoData from "./todoData";
 
 // class App extends React.Component {
-  
 //   constructor() {
-//     super()
+//     super();
 //     this.state = {
-//       todos: todoData
-//     }
+//       todos: todoData,
+//     };
+//     this.handleClick = this.handleClick.bind(this);
 //   }
-   
+
+//   handleClick(id) {
+//     this.setState((prevState) => {
+//       const updatedTodos = prevState.todos.map((todo) => {
+//         if (todo.id === id) {
+//           todo.completed = !todo.completed;
+//         }
+//         return todo;
+//       });
+//       return {
+//         todos: updatedTodos,
+//       };
+//     });
+//   }
+
 //   render() {
-//     const todoItems = this.state.todos.map(it => 
-//       <TodoItem
-//         key={it.id}
-//         data={it}
-//       />
-//     )
-    
-//     return (
-//       <div>
-//         {todoItems}
-//       </div>
-//     )
-    
+//     const todoItems = this.state.todos.map((it) => (
+//       <TodoItem key={it.id} data={it} handleChange={this.handleClick} />
+//     ));
+
+//     return <div>{todoItems}</div>;
 //   }
 // }
 
 class App extends React.Component {
   constructor() {
-    super()
-    this.state = {
-      counter: 0
-    }
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick() {
-    this.setState((prevState) => {
-      return {
-        counter: prevState.counter + 1
-      }
-    }) 
+    super();
+    this.state = {};
   }
 
   render() {
-    return (
-      <div>
-        <h1>{this.state.counter}</h1>
-        <button onClick={this.handleClick}>Add!</button>
-      </div>
-    )
+    return <div>Hello!</div>;
   }
 }
 
+export default App;
 
-export default App
+// // ========================= LIFE CYCLE ==================================================
+
+// // When mount (born to the screen, runs once, Ex.: Fetch data)
+// componentDidMount() {}
+
+// // Receiveing props from parent. Run everytime
+// // parent component change props passed
+// // DEPRECATED
+// componentWillReceiveProps(nextProps)
+
+// // Decide if component updates based on incoming props and incoming state
+// shouldComponentUpdate(nextProps, nextState) // returns true or false
+
+// // Umnount/disappear component from screen. Remove things you set on
+// // {@method componentDidMount}
+// componentWillUnmount()
+
+// // Render components everytime something changes
+// render()
+
+// // returns the new updated state based upon props
+// // read before use! Rare cases
+// static getDerivedStateStateFromProps(props, state)
+
+// // Create backup of the current way things are
+// getSnapshotBeforeUpdate()

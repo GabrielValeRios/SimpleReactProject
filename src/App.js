@@ -3,46 +3,35 @@ import React from "react";
 import TodoItem from "./TodoItem";
 import todoData from "./todoData";
 
-// class App extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       todos: todoData,
-//     };
-//     this.handleClick = this.handleClick.bind(this);
-//   }
-
-//   handleClick(id) {
-//     this.setState((prevState) => {
-//       const updatedTodos = prevState.todos.map((todo) => {
-//         if (todo.id === id) {
-//           todo.completed = !todo.completed;
-//         }
-//         return todo;
-//       });
-//       return {
-//         todos: updatedTodos,
-//       };
-//     });
-//   }
-
-//   render() {
-//     const todoItems = this.state.todos.map((it) => (
-//       <TodoItem key={it.id} data={it} handleChange={this.handleClick} />
-//     ));
-
-//     return <div>{todoItems}</div>;
-//   }
-// }
-
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      todos: todoData,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(id) {
+    this.setState((prevState) => {
+      const updatedTodos = prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: updatedTodos,
+      };
+    });
   }
 
   render() {
-    return <div>Hello!</div>;
+    const todoItems = this.state.todos.map((it) => (
+      <TodoItem key={it.id} data={it} handleChange={this.handleClick} />
+    ));
+
+    return <div>{todoItems}</div>;
   }
 }
 

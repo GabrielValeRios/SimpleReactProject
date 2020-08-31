@@ -1,17 +1,17 @@
 const todoData = [
     {
         id:"1",
-        text:"wash my butt gracefully",
+        text:"do homework",
         completed:true
     },
     {
         id:"2",
-        text:"kill the animals",
+        text:"walk with dog",
         completed:false
     },
     {
         id:"3",
-        text:"get first crown at fall guy",
+        text:"get first crown at fall guys",
         completed:false
     },
     {
